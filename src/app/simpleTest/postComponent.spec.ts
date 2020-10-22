@@ -1,15 +1,15 @@
 import { postComponent } from "./postComponent"
 
 describe('Post Component', () => {
-    let component:postComponent;
-    
+    let component: postComponent;
+
     //only once
     //before -> setup
     //after -> teardown
-    beforeAll(() => {});
+    beforeAll(() => { });
 
     afterAll(() => {
-        component=null;
+        component = null;
     });
 
     //every time for a spec
@@ -19,7 +19,7 @@ describe('Post Component', () => {
         component.totaislLikes = 3;
     });
 
-    afterEach(() => {});
+    afterEach(() => { });
 
     it('Should increase likes', () => {
         //Act
@@ -31,5 +31,11 @@ describe('Post Component', () => {
     it('Should decrease likes', () => {
         component.dislike();
         expect(component.totaislLikes).toBe(2);
+    })
+
+    it('Should decrease likes only if the total likes is not 0', () => {
+        component.totaislLikes = 0;
+        component.dislike();
+        expect(component.totaislLikes).not.toBe(-1);
     })
 })

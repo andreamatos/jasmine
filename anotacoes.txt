@@ -1,0 +1,26 @@
+- Estrutura simples de um teste unitario
+describe('Post Component', () => {
+    //only once
+    beforeAll(() => {});
+    //before -> setup
+    beforeEach(() => {});
+    //after -> teardown
+    afterAll(() => {});
+    //every time for a spec
+    afterEach(() => {});
+
+    it('Should increase likes', () => {
+        //Act -> processa variaveis
+        //Assert -> verifica resultado
+        expect(variavel).toBe(resultado esperado para a variavel);
+    })
+})
+
+ng test --code-coverage
+mostra a cobertura do codigo
+=============================== Coverage summary ===============================
+Statements   : 100% ( 6/6 )
+Branches     : 100% ( 2/2 )
+Functions    : 66.67% ( 2/3 )
+Lines        : 100% ( 6/6 )
+================================================================================
