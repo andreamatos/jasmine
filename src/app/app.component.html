@@ -1,1 +1,8 @@
-<app-post></app-post>
+<nav>
+    <a routerLinkActive="active" [routerLink]="['posts']">posts</a>
+    <a class="userLink" routerLinkActive="active" [routerLink]="['users']"
+      >Users</a
+    >
+  </nav>
+  <router-outlet></router-outlet>
+  
