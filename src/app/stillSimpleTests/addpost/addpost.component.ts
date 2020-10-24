@@ -21,7 +21,7 @@ export class AddpostComponent implements OnInit {
 
   formSubmit() {
     this.addForm.valid
-      ? (this.addPost.emit({ ...this.addForm.value, userId: 1 }),
+      ? (this.addPost.emit({ ...this.addForm.value, userId: 1, id: 1, totalLikes: 1, myLike: true }),
         this.addForm.reset())
       : null;
   }

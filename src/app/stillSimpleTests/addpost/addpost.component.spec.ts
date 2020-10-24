@@ -57,7 +57,23 @@ describe('AddpostComponent', () => {
 
   it('should check for error in exact form control', () => {
     expect(component.addForm.get('title').errors.required).toBeTruthy();
-  })
+  });
 
-
+  it('Should able to submit value', () => {
+    // spyon method and event emitter
+    let spyRef = spyOn(component.addPost, 'emit').and.callFake(() => {});
+    component.addForm.get('title').patchValue('Test Value');
+    let button = fixture.debugElement.query(By.css('.addPost'));
+    let htmlButton: HTMLElement = button.nativeElement;
+    htmlButton.dispatchEvent(new Event('click'));
+    fixture.detectChanges();
+    expect(spyRef).toHaveBeenCalledWith({
+      title: 'Test Value',
+      body: '',
+      userId: 1,
+      id: 1,
+      totalLikes: 1,
+      myLike: true
+    });
+  });
 });

@@ -7,11 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './shared/material.module';
 
 import { AppComponent } from './app.component';
+import { postComponent } from './simpleTests/postComponent/postComponent';
 import { PostsComponent } from './stillSimpleTests/posts/posts.component';
 import { UsersComponent } from './stillSimpleTests/users/users.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AddpostComponent } from './stillSimpleTests/addpost/addpost.component';
-import { postComponent } from './simpleTests/postComponent/postComponent';
 
 @NgModule({
   declarations: [
